@@ -35,6 +35,14 @@ environments:
     value: "random_password"
   - key: "DOMAIN"
     value: "[CI_CD_DOMAIN]"
+  - key: "MARIADB_ROOT_PASSWORD"
+    value: "random_password"
+  - key: "MARIADB_DATABASE"
+    value: "glpidb"
+  - key: "MARIADB_USER"
+    value: "root"
+  - key: "MARIADB_PASSWORD"
+    value: "random_password"
 
 config:
   runTime: "dockerCompose"
