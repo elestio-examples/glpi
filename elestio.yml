@@ -1,0 +1,60 @@
+ports:
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "443"
+    targetPort: "22571"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: false
+  - protocol: "HTTPS"
+    targetProtocol: "HTTP"
+    listeningPort: "26452"
+    targetPort: "22811"
+    targetIP: "172.17.0.1"
+    public: true
+    path: "/"
+    isAuth: true
+    login: "root"
+    loginTitle: "PHPMyAdmin"
+    password: "random_password"
+  - protocol: "TCP"
+    targetProtocol: "TCP"
+    listeningPort: "52698"
+    targetIP: "172.17.0.1"
+    targetPort: "50778"
+    public: true
+    path: "/"
+    isAuth: false
+    login: ""
+    password: ""
+environments:
+  - key: "ADMIN_EMAIL"
+    value: "[EMAIL]"
+  - key: "ADMIN_PASSWORD"
+    value: "random_password"
+  - key: "DOMAIN"
+    value: "[CI_CD_DOMAIN]"
+
+config:
+  runTime: "dockerCompose"
+  version: ""
+  framework: ""
+  buildCommand: "docker-compose build"
+  buildDir: "/"
+  runCommand: "docker-compose up -d"
+  icon: ""
+  screenshot: "glpi.png"
+lifeCycleConfig:
+  preInstallCommand: "./scripts/preInstall.sh"
+  postInstallCommand: "./scripts/postInstall.sh"
+  preBackupCommand: "./scripts/preBackup.sh"
+  postBackupCommand: "./scripts/postBackup.sh"
+  preRestoreCommand: "./scripts/preRestore.sh"
+  postRestoreCommand: "./scripts/postRestore.sh"
+  postDeployCommand: "./scripts/postDeploy.sh"
+webUI:
+  - url: "https://[CI_CD_DOMAIN]"
+    label: "GLPI"
+    login: "[ADMIN_EMAIL]"
+    password: "[ADMIN_PASSWORD]"
