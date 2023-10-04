@@ -35,13 +35,13 @@ environments:
     value: "random_password"
   - key: "DOMAIN"
     value: "[CI_CD_DOMAIN]"
-  - key: "MARIADB_ROOT_PASSWORD"
+  - key: "MYSQL_ROOT_PASSWORD"
     value: "random_password"
-  - key: "MARIADB_DATABASE"
+  - key: "MYSQL_DATABASE"
     value: "glpidb"
-  - key: "MARIADB_USER"
-    value: "root"
-  - key: "MARIADB_PASSWORD"
+  - key: "MYSQL_USER"
+    value: "glpi"
+  - key: "MYSQL_PASSWORD"
     value: "random_password"
 
 config:
