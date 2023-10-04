@@ -13,7 +13,7 @@ services:
       - "172.17.0.1:50778:3306"
 
   glpi:
-    image: diouxx/glpi
+    image: elestio4test/glpi:latest
     restart: always
     hostname: glpi
     ports:
