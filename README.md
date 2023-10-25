@@ -30,7 +30,7 @@ You will have to complete the initial setup. for this follow these steps:
 - Click on `Continue` on Step 0 page
 - On Step 1 you'll have to enter these credentials:
 
-        SQL Server=[CI_CD_DOMAIN]:52698
+        SQL Server=172.17.0.1:50778
         SQL User=glpi
         SQL Password=[ADMIN_PASSWORD]
 
