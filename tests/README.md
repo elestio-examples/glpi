@@ -81,13 +81,13 @@ Here are some example snippets to help you get started creating a container.
             ports:
                 - "172.17.0.1:22811:80"
             environment:
-            PMA_HOST: mysql
-            PMA_PORT: 3306
-            PMA_USER: root
-            PMA_PASSWORD: ${ADMIN_PASSWORD}
-            UPLOAD_LIMIT: 500M
-            MYSQL_USERNAME: glpi
-            MYSQL_ROOT_PASSWORD: ${ADMIN_PASSWORD}
+              PMA_HOST: mysql
+              PMA_PORT: 3306
+              PMA_USER: root
+              PMA_PASSWORD: ${ADMIN_PASSWORD}
+              UPLOAD_LIMIT: 500M
+              MYSQL_USERNAME: glpi
+              MYSQL_ROOT_PASSWORD: ${ADMIN_PASSWORD}
             depends_on:
                 - mysql
 
