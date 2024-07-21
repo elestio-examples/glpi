@@ -10,14 +10,14 @@ services:
     env_file:
       - ./.env
     ports:
-      - "172.17.0.1:50778:3306"
+      - "50778:3306"
 
   glpi:
     image: elestio/glpi:${SOFTWARE_VERSION_TAG}
     restart: always
     hostname: glpi
     ports:
-      - "172.17.0.1:22571:80"
+      - "22571:80"
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
@@ -32,7 +32,7 @@ services:
     links:
       - mysql:mysql
     ports:
-      - "172.17.0.1:22811:80"
+      - "22811:80"
     environment:
       PMA_HOST: mysql
       PMA_PORT: 3306
