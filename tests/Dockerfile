@@ -9,20 +9,20 @@ RUN apt update \
     && apt update \
     && apt install --yes --no-install-recommends \
     apache2 \
-    php8.1 \
-    php8.1-mysql \
-    php8.1-ldap \
-    php8.1-xmlrpc \
-    php8.1-imap \
-    php8.1-curl \
-    php8.1-gd \
-    php8.1-mbstring \
-    php8.1-xml \
+    php8.4 \
+    php8.4-mysql \
+    php8.4-ldap \
+    php8.4-xmlrpc \
+    php8.4-imap \
+    php8.4-curl \
+    php8.4-gd \
+    php8.4-mbstring \
+    php8.4-xml \
     php-cas \
-    php8.1-intl \
-    php8.1-zip \
-    php8.1-bz2 \
-    php8.1-redis \
+    php8.4-intl \
+    php8.4-zip \
+    php8.4-bz2 \
+    php8.4-redis \
     cron \
     jq \
     libldap-2.4-2 \
