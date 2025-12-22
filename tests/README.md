@@ -10,11 +10,11 @@
 
 [GLPI](https://glpi-project.org/) is the most complete open source service management software.
 
-<img src="https://github.com/elestio-examples/glpi/raw/main/glpi.png" alt="glpi" width="800">
+<img src="https://elest.io/images/softwares/365/screenshot2.png" alt="glpi" width="800">
 
 Deploy a <a target="_blank" href="https://elest.io/open-source/glpi">fully managed GLPI</a> on <a target="_blank" href="https://elest.io/">elest.io</a> if you want automated backups, reverse proxy with SSL termination, firewall, automated OS & Software updates, and a team of Linux experts and open source enthusiasts to ensure your services are always safe, and functional.
 
-[![deploy](https://github.com/elestio-examples/glpi/raw/main/deploy-on-elestio.png)](https://dash.elest.io/deploy?source=cicd&social=dockerCompose&url=https://github.com/elestio-examples/glpi)
+[![deploy](https://cf.appdrag.com/dashboard-openvm-clo-b2d42c/uploads/deploy-on-elestio-eMJS.png)](https://dash.elest.io/deploy?source=cicd&social=dockerCompose&url=https://github.com/elestio-examples/glpi)
 
 # Why use Elestio images?
 
@@ -23,24 +23,6 @@ Deploy a <a target="_blank" href="https://elest.io/open-source/glpi">fully manag
 - Our team performs quality control checks to ensure the products we release meet our high standards.
 
 # Usage
-
-## Git clone
-
-You can deploy it easily with the following command:
-
-    git clone https://github.com/elestio-examples/glpi.git
-
-Copy the .env file from tests folder to the project directory
-
-    cp ./tests/.env ./.env
-
-Edit the .env file with your own values.
-
-Run the project with the following command
-
-    docker-compose up -d
-
-You can access the Web UI at: `http://your-domain:22571`
 
 ## Docker-compose
 
@@ -103,6 +85,10 @@ Here are some example snippets to help you get started creating a container.
 |     MYSQL_USER      |      glpi       |
 |   MYSQL_PASSWORD    |  your-password  |
 
+## Access
+
+You can access the Web UI at: `http://your-domain:22571`
+
 # Maintenance
 
 ## Logging
@@ -141,5 +127,3 @@ That's it! With these simple steps, you can easily backup and restore your data 
 - <a target="_blank" href="https://github.com/glpi-project/glpi">GLPI Github repository</a>
 
 - <a target="_blank" href="https://glpi-project.org/documentation/">GLPI documentation</a>
-
-- <a target="_blank" href="https://github.com/elestio-examples/glpi">Elestio/glpi Github repository</a>

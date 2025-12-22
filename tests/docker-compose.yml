@@ -1,5 +1,3 @@
-version: "3.3"
-
 services:
   mysql:
     image: elestio/mysql:8.0
@@ -13,7 +11,7 @@ services:
       - "172.17.0.1:50778:3306"
 
   glpi:
-    image: elestio4test/glpi:latest
+    image: elestio4test/glpi:${SOFTWARE_VERSION_TAG}
     restart: always
     hostname: glpi
     ports:
@@ -22,8 +20,16 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./storage/var/www/html/glpi/:/var/www/html/glpi
+      - ./apache/php.ini:/etc/php/8.1/apache2/php.ini
     environment:
       - TIMEZONE=Europe/Brussels
+      - GLPI_DB_HOST=mysql
+      - GLPI_DB_PORT=3306
+      - GLPI_DB_NAME=${MYSQL_DATABASE}
+      - GLPI_DB_USER=${MYSQL_USER}
+      - GLPI_DB_PASSWORD=${MYSQL_PASSWORD}
+    depends_on:
+      - mysql
 
   pma:
     image: phpmyadmin
