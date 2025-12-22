@@ -11,7 +11,7 @@ services:
       - "172.17.0.1:50778:3306"
 
   glpi:
-    image: elestio4test/glpi:${SOFTWARE_VERSION_TAG}
+    image: elestio4test/glpi:latest
     restart: always
     hostname: glpi
     ports:
