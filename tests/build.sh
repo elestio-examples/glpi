@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker buildx build . --output type=docker,name=elestio4test/glpi:latest | docker load
+docker buildx build . -t elestio4test/glpi:latest --load
