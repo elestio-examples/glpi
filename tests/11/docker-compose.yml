@@ -1,0 +1,48 @@
+services:
+  mysql:
+    image: elestio/mysql:8.0
+    restart: always
+    hostname: mysql
+    # volumes:
+    #   - ./storage/mysql:/var/lib/mysql
+    env_file:
+      - ./.env
+    ports:
+      - "172.17.0.1:50778:3306"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-p${MYSQL_ROOT_PASSWORD}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  glpi:
+    image: elestio4test/glpi:11
+    restart: always
+    hostname: glpi
+    ports:
+      - "172.17.0.1:22571:80"
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - ./storage/var/www/html/glpi/:/var/www/html/glpi
+      - ./apache/php.ini:/etc/php/8.1/apache2/php.ini
+    environment:
+      - TIMEZONE=Europe/Brussels
+      - GLPI_DB_HOST=mysql
+      - GLPI_DB_PORT=3306
+      - GLPI_DB_NAME=${MYSQL_DATABASE}
+      - GLPI_DB_USER=${MYSQL_USER}
+      - GLPI_DB_PASSWORD=${MYSQL_PASSWORD}
+    depends_on:
+      mysql:
+        condition: service_healthy
